@@ -1,0 +1,304 @@
+// Dota Heroes File
+// NOTE: This is not for creating new heroes, this is for taking a currently existing hero as a template and overriding
+// the specified key-value combinations.  Use override_hero <hero_to_override> for this.
+"DOTAHeroes"
+{
+	//=================================================================================================================
+	// HERO: The Alpha Stryder
+	//=================================================================================================================
+	"hero_alpha_strider"
+	{
+		"override_hero"				"npc_dota_hero_disruptor"
+		"AbilityLayout"				"5"
+		"Ability1"				"alpha_strider_static_charge"			// Ability 1
+		"Ability2"				"alpha_strider_plasma_leap"			// Ability 2
+		"Ability3"				"alpha_strider_talon_spark"			// Ability 3
+		"Ability4"				"alpha_strider_alternating_current"		// Innate
+		"Ability5"				"attribute_bonus"				
+		"Ability6"				"alpha_strider_short_circuit"			// Ultimate
+		
+	
+		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"			// Primary Attribute
+		"AttributeBaseStrength"		"14"						// Base strength
+		"AttributeStrengthGain"		"1.2"						// Strength bonus per level.
+		"AttributeBaseIntelligence"	"18"						// Base intelligence
+		"AttributeIntelligenceGain"	"2.0"						// Intelligence bonus per level.
+		"AttributeBaseAgility"		"20"						// Base agility
+		"AttributeAgilityGain"		"1.7"						// Agility bonus per level.
+		"ArmorPhysical"			"3"	
+		"AttackRate" 			"1.7"
+		"AttackRange"			"325"
+		"MovementSpeed" 		"325"
+		"AttackDamageMin"		"14"						
+		"AttackDamageMax"		"18"	
+	}
+	//=================================================================================================================
+	// HERO: Cherub, the Dancing Flower
+	//=================================================================================================================
+	"hero_cherub"
+	{
+		"override_hero"				"npc_dota_hero_enchantress"
+		"Ability1"				"cherub_sleep_cloud"			// Ability 1
+		"Ability2"				"cherub_synthesis"			// Ability 2
+		"Ability3"				"cherub_explosive_spore"		// Ability 3
+		"Ability4"				"cherub_flower_garden"			// Ultimate
+
+		"AttributeBaseStrength"		"22"						// Base strength
+		"AttributeStrengthGain"		"2.3"						// Strength bonus per level.
+		"AttributeBaseIntelligence"	"25"						// Base intelligence
+		"AttributeIntelligenceGain"	"2.5"						// Intelligence bonus per level.
+		"AttributeBaseAgility"		"11"						// Base agility
+		"AttributeAgilityGain"		"1.5"						// Agility bonus per level.
+		"ArmorPhysical"			"1"	
+		"AttackRate" 			"1.7"
+		"AttackRange"			"550"
+		"ProjectileSpeed"		"900"
+		"MovementSpeed" 		"310"
+		"AttackDamageMin"		"24"						
+		"AttackDamageMax"		"28"	
+	}
+	//=================================================================================================================
+	// HERO: Aldebaran, the Edgewalker
+	//=================================================================================================================
+	"hero_edgewalker"
+	{
+		"override_hero"				"npc_dota_hero_spectre"
+		"Ability1"					"edgewalker_cascade"			// Ability 1
+	}
+	//=================================================================================================================
+	// HERO: Rasetsumaru, the Onimusha
+	//=================================================================================================================
+	"hero_onimusha"
+	{
+		"override_hero"                         "npc_dota_hero_juggernaut"
+		"InternalName"                          "Rasetsumaru"
+		"AbilityLayout"                         "6"
+		"Ability1"                                      "onimusha_dash"
+		"Ability2"                                      "onimusha_guard"
+		"Ability3"                                      "onimusha_orochi"
+		"Ability4"                                      "W"
+		"Ability5"                                      "R"
+		"Ability6"                                      "onimusha_Battojutsu(E)"
+		"Ability7"                                      "attribute_bonus"      
+
+		// Armor
+		//-------------------------------------------------------------------------------------------------------------
+		"ArmorPhysical"                         "2.65"                                                                  // Physical protection.
+		"MagicalResistance"                             "25"                                                                    // Magical protection (percentage).
+
+		// Attack
+		//-------------------------------------------------------------------------------------------------------------
+		"AttackCapabilities"            "DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"                       "28"                                                                            // Damage range min.
+		"AttackDamageMax"                       "33"                                                                            // Damage range max.
+		"AttackDamageType"                      "DAMAGE_TYPE_ArmorPhysical"                             // Type of damage dealt.
+		"AttackRate"                            "1.7"                                                                   // Speed of attack.
+		"AttackAnimationPoint"          "0.35"                                                                  // Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"        "800"                                                                   // Range within a target can be acquired.
+		"AttackRange"                           "128"                                                                   // Range within a target can be attacked.
+		"ProjectileModel"                       "melee_hero"                                                    // Particle system model for projectile.
+		"ProjectileSpeed"                       "900"                                                                   // Speed of projectile.
+
+		// Attributes
+		//-------------------------------------------------------------------------------------------------------------
+		"AttributePrimary"                      "DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"         "18"                                                                            // Base strength
+		"AttributeStrengthGain"         "1.7"                                                                           // Strength bonus per level.
+		"AttributeBaseIntelligence"     "24"                                                                            // Base intelligence
+		"AttributeIntelligenceGain"     "2.3"                                                                           // Intelligence bonus per level.
+		"AttributeBaseAgility"          "23"                                                                            // Base agility
+		"AttributeAgilityGain"          "2"                                                                             // Agility bonus per level.    
+		"MovementSpeed"                         "305"                                                                   // Speed.
+		"StatusHealth"                          "103"
+    }
+	//=================================================================================================================
+	// HERO: Scaw'mar, the Wildwing Scryer
+	//=================================================================================================================
+	"hero_scawmar"
+	{
+		"override_hero"				"npc_dota_hero_phoenix"
+		"Model" 			"models/creeps/neutral_creeps/n_creep_vulture_a/n_creep_vulture_a.vmdl"
+		"AbilityLayout"				"4"
+		"Ability1"				"scawmar_illusion_line"			// Ability 1
+		"Ability2"				"scawmar_fade_blink"			// Ability 2
+		"Ability3"				"scawmar_scryers_circle"		// Ability 3
+		"Ability4"				"attribute_bonus"		
+		"Ability5"				"attribute_bonus"				
+		"Ability6"				"scawmar_mind_control"			// Ultimate
+
+
+		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"			// Primary Attribute
+		"AttributeBaseStrength"		"16"						// Base strength
+		"AttributeStrengthGain"		"1.4"						// Strength bonus per level.
+		"AttributeBaseIntelligence"	"30"						// Base intelligence
+		"AttributeIntelligenceGain"	"3.6"						// Intelligence bonus per level.
+		"AttributeBaseAgility"		"18"						// Base agility
+		"AttributeAgilityGain"		"2.0"						// Agility bonus per level.
+		"ArmorPhysical"			"1"	
+		"AttackRate" 			"1.7"
+		"MovementSpeed" 		"290"
+		"AttackDamageMin"		"19"						
+		"AttackDamageMax"		"32"	
+	}
+	//=================================================================================================================
+	// HERO: Sunagakure, the Puppeteer
+	//=================================================================================================================
+	"hero_suna"
+	{
+		"override_hero"				"npc_dota_hero_nyx_assassin"
+		"Ability1"				"suna_blight_and_wither"			// Ability 1
+		"Ability2"				"suna_vicissitude"			// Ability 2
+		"Ability3"				"suna_puppeteer"			// Ability 3
+		"Ability4"				"attribute_bonus"
+		"Ability6"				"suna_dead_mans_chest"		// Ultimate
+		"Ability7"				"suna_kyonshi"			// Ability 3
+		"Ability8"				"suna_mind_control"
+
+		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"			// Primary Attribute
+		"AttributeBaseStrength"		"19"						// Base strength
+		"AttributeStrengthGain"		"1.7"						// Strength bonus per level.
+		"AttributeBaseIntelligence"	"24"						// Base intelligence
+		"AttributeIntelligenceGain"	"2.7"						// Intelligence bonus per level.
+		"AttributeBaseAgility"		"12"						// Base agility
+		"AttributeAgilityGain"		"1.5"						// Agility bonus per level.
+		"ArmorPhysical"			"1"	
+		"AttackRate" 			"1.9"
+		"MovementSpeed" 		"295"
+
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"ProjectileModel"			"particles/units/heroes/hero_necrolyte/necrolyte_base_attack.vpcf"
+		"SoundSet"					"Hero_Necrolyte"	
+		"AttackRange"			"425"
+		"ProjectileSpeed"		"900"
+		"AttackDamageMin"		"30"					
+		"AttackDamageMax"		"40"	
+	}
+	//=================================================================================================================
+	// HERO: Veera, the Plains Hunter
+	//=================================================================================================================
+	"hero_veera"
+	{
+		"override_hero"				"npc_dota_hero_bounty_hunter"
+		"Ability1"				"veera_toxic_darts"			// Ability 1
+		"Ability2"				"veera_evasive_roll"			// Ability 2
+		"Ability3"				"veera_plains_runner"			// Ability 3
+		"Ability4"				"veera_thrill_of_the_hunt"		// Ultimate
+		
+		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"			// Primary Attribute
+		"AttributeBaseStrength"		"18"						// Base strength
+		"AttributeStrengthGain"		"1.4"						// Strength bonus per level.
+		"AttributeBaseIntelligence"	"17"						// Base intelligence
+		"AttributeIntelligenceGain"	"2.4"						// Intelligence bonus per level.
+		"AttributeBaseAgility"		"27"						// Base agility
+		"AttributeAgilityGain"		"2.4"						// Agility bonus per level.
+		"ArmorPhysical"			"-1"	
+		"AttackRate" 			"1.6"
+		"MovementSpeed" 		"300"
+		"AttackDamageMin"		"17"						
+		"AttackDamageMax"		"25"	
+	}
+	//=================================================================================================================
+	// HERO: Viscous Ooze
+	//=================================================================================================================
+	"hero_viscous_ooze"
+	{
+		"override_hero"				"npc_dota_hero_venomancer"
+		"Ability1"				"viscous_ooze_slime_trail"		// Ability 1
+		"Ability2"				"viscous_ooze_split_oozelings"		// Ability 2
+		"Ability3"				"viscous_ooze_sticky_membrane"		// Ability 3
+		"Ability4"				"viscous_ooze_consume_item"		// Ultimate 
+		
+		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"			// Primary Attribute
+		"AttributeBaseStrength"		"40"						// Base strength
+		"AttributeStrengthGain"		"2.5"						// Strength bonus per level.
+		"AttributeBaseIntelligence"	"8"						// Base intelligence
+		"AttributeIntelligenceGain"	"0.6"						// Intelligence bonus per level.
+		"AttributeBaseAgility"		"10"						// Base agility
+		"AttributeAgilityGain"		"0.75"						// Agility bonus per level.
+		"ArmorPhysical"			"-1"	
+		"AttackRate" 			"1.8"
+		"AttackRange"			"250"
+		"ProjectileSpeed"		"800"
+		"MovementSpeed" 		"250"
+		"AttackDamageMin"		"30"					
+		"AttackDamageMax"		"40"
+	}
+	//=================================================================================================================
+	// HERO: Xarax, the Trickster
+	//=================================================================================================================
+	"hero_xarax"
+	{
+		"override_hero"				"npc_dota_hero_riki"
+		"AbilityLayout"				"6"
+		"Ability1"				"xarax_trap_door"
+		"Ability2"				"xarax_devils_cape"
+		"Ability3"				"xarax_trick_box_1"
+		"Ability4"				"xarax_trick_box_2"
+		"Ability5"				"xarax_trick_box_3"
+		"Ability6"				"xarax_share_tricks"
+		"Ability7"				"attribute_bonus"
+	
+		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"			// Primary Attribute
+		"AttributeBaseStrength"		"18"						// Base strength
+		"AttributeStrengthGain"		"2.1"						// Strength bonus per level.
+		"AttributeBaseIntelligence"	"25"						// Base intelligence
+		"AttributeIntelligenceGain"	"2.8"						// Intelligence bonus per level.
+		"AttributeBaseAgility"		"18"						// Base agility
+		"AttributeAgilityGain"		"2.0"						// Agility bonus per level.
+		"ArmorPhysical"			"2"	
+		"AttackRate" 			"1.7"
+		"MovementSpeed" 		"290"
+		"AttackDamageMin"		"15"						
+		"AttackDamageMax"		"33"	
+	}
+	//=================================================================================================================
+	// HERO: Zeros, the Archduke of Stonehall
+	//=================================================================================================================
+	"hero_zeros"
+	{
+		"override_hero"				"npc_dota_hero_skeleton_king"
+		"Ability1"				"zeros_impose_tax"		// Ability 1
+		"Ability2"				"zeros_royal_statue"
+		"Ability3"				"zeros_blade_of_malice"
+		"Ability4"				"zeros_fanaticism"
+		
+		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"		// Primary Attribute
+		"AttributeBaseStrength"		"20"						// Base strength
+		"AttributeStrengthGain"		"2.5"						// Strength bonus per level.
+		"AttributeBaseIntelligence"	"18"						// Base intelligence
+		"AttributeIntelligenceGain"	"1.5"						// Intelligence bonus per level.
+		"AttributeBaseAgility"		"15"						// Base agility
+		"AttributeAgilityGain"		"2.75"						// Agility bonus per level.
+		"ArmorPhysical"			"3.14"	
+		"AttackRate" 			"1.6"
+		"MovementSpeed" 		"300"
+		"AttackDamageMin"		"40"					
+		"AttackDamageMax"		"45"
+	}
+	//=================================================================================================================
+	// HERO: Zulf, the Stormhunter
+	//=================================================================================================================
+	"hero_zulf"
+	{
+		"override_hero"				"npc_dota_hero_skywrath_mage"
+		"Ability1"				"zulf_cyclone_trap"
+		"Ability2"				"zulf_jet_stream"
+		"Ability3"				"zulf_gale_force"
+		"Ability4"				"zulf_typhoon"
+
+	
+		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"			// Primary Attribute
+		"AttributeBaseStrength"		"22"						// Base strength
+		"AttributeStrengthGain"		"1.6"						// Strength bonus per level.
+		"AttributeBaseIntelligence"	"18"						// Base intelligence
+		"AttributeIntelligenceGain"	"2.2"						// Intelligence bonus per level.
+		"AttributeBaseAgility"		"22"						// Base agility
+		"AttributeAgilityGain"		"2.9"						// Agility bonus per level.
+		"ArmorPhysical"			"2"	
+		"AttackRate" 			"1.7"
+		"AttackRange"			"325"
+		"MovementSpeed" 		"285"
+		"AttackDamageMin"		"21"						
+		"AttackDamageMax"		"27"	
+	}
+}
