@@ -64,6 +64,10 @@
 	{
 		"override_hero"				"npc_dota_hero_spectre"
 		"Ability1"					"edgewalker_cascade"			// Ability 1
+		"Ablity2"                                        "edgewalker_neutrinos"                 // Ability 2    
+		"Ability3"					"edgewalker_gravity_well"		// Ability 3
+		"Ability4"					"edgewalker_shift"				// Ability 4
+		"Ability5"                                      "attribute_bonus"   //Ability 5  
 	}
 	//=================================================================================================================
 	// HERO: Rasetsumaru, the Onimusha
