@@ -63,6 +63,23 @@
 	"hero_edgewalker"
 	{
 		"override_hero"				"npc_dota_hero_spectre"
+		"ArmorPhysical"				"4"							
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"23"								
+		"AttackDamageMax"			"27"								
+		"AttackRate"				"1.7"								
+		"AttackAnimationPoint"		"0.3"									
+		"AttackAcquisitionRange"	"600"									
+		"AttackRange"				"128"								
+		"AttributePrimary"				"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"			"14"								
+		"AttributeStrengthGain"			"2.25"								
+		"AttributeBaseAgility"			"36"								
+		"AttributeAgilityGain"			"1.35"								
+		"AttributeBaseIntelligence"		"18"								
+		"AttributeIntelligenceGain"		"3.45"								
+		"MovementSpeed"				"325"								
+		"MovementTurnRate"			"0.8"	
 		"Ability1"					"edgewalker_cascade"			// Ability 1
 		"Ablity2"                                        "edgewalker_neutrinos"                 // Ability 2    
 		"Ability3"					"edgewalker_gravity_well"		// Ability 3
