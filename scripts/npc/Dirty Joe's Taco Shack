@@ -1,0 +1,517 @@
+//=================================================================================================================
+	// HERO: Aldebaran, the Edgewalker
+	//=================================================================================================================
+	"npc_dota_hero_spectre"	
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"Model"						"models/heroes/spectre/spectre.mdl"		
+		"Portrait"					"vgui/hud/heroportraits/portrait_spectre"						
+		"SoundSet"					"Hero_Spectre"													
+		"IdleSoundLoop"				"Hero_Spectre.IdleLoop"
+		"Enabled"					"1"
+		"HeroUnlockOrder"			"2"
+		"Role"						"Carry,Nuker"
+		"Rolelevels"			"3,1"
+		"Team"						"Bad"
+		"HeroID"					"67"			
+		"ModelScale" 				".67"
+		"LoadoutScale"				".75"
+		"HeroGlowColor" 			"107 74 53"
+		"PickSound"					"spectre_spec_spawn_01"
+		"BanSound"					"spectre_spec_anger_02"
+		"CMEnabled"					"1"
+		"url"					"Spectre"
+		"LastHitChallengeRival"		"npc_dota_hero_bounty_hunter"
+		"HeroSelectSoundEffect"		"Hero_Spectre.Pick"
+
+		// Abilities
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityLayout"				"5"
+		"Ability1"					"edgewalker_cascade_event"	// Ability 1
+		"Ability2"					"edgewalker_neutrino"			// Ability 2
+		"Ability3"					"edgewalker_gravity_well"		// Ability 3
+		"Ability4"					"edgewalker_shift"				// Ability 4
+		"Ability5"					"attribute_bonus"			// Ability 5
+
+		// Armor
+		//-------------------------------------------------------------------------------------------------------------
+		"ArmorPhysical"				"4"								
+
+		// Attack
+		//-------------------------------------------------------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"23"									
+		"AttackDamageMax"			"27"									
+		"AttackRate"				"1.7"									
+		"AttackAnimationPoint"		"0.3"									
+		"AttackAcquisitionRange"	"600"									
+		"AttackRange"				"128"									
+		// Attributes
+		//-------------------------------------------------------------------------------------------------------------
+		"AttributePrimary"				"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"			"14"									
+		"AttributeStrengthGain"			"2.25"									
+		"AttributeBaseAgility"			"36"									
+		"AttributeAgilityGain"			"1.35"									
+		"AttributeBaseIntelligence"		"18"									
+		"AttributeIntelligenceGain"		"3.45"									
+		// Movement
+		//-------------------------------------------------------------------------------------------------------------
+		"MovementSpeed"				"325"									
+		"MovementTurnRate"			"0.8"									
+		
+		"HealthBarOffset"			"180"
+		
+		"ParticleFile"				"particles/units/heroes/hero_spectre.pcf"
+		"GameSoundsFile"			"scripts/game_sounds_heroes/game_sounds_spectre.txt"
+		"VoiceFile"					"scripts/voscripts/game_sounds_vo_spectre.txt"
+
+		
+		{
+			"Abilities"
+"edgewalker_cascade_event"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"1"
+		"AbilityTextureName"			"batrider_flamebreak"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"475"
+		"AbilityCastPoint"				"0.5 0.4 0.3 0.01"
+	
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"18.0 14.0 10.0 6.0"
+	
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"150 125 100 75"
+	
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"1.0"
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"explosion_radius"		"375 375 375 375"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"collision_radius"		"100 100 100 100"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"speed"					"750 900 1050 1200"
+                        }
+                        "04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"leash_duration"		"1.75"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"leash_radius"			"475"
+			}
+                "Modifiers"
+		{
+			"modifier_static_remnant_dummy_datadriven"
+			{
+				"OverrideAnimation"	"ACT_DOTA_CAST_ABILITY_1"
+			
+				"EffectName"		"particles/units/heroes/hero_stormspirit/stormspirit_static_remnant.vpcf"
+				"EffectAttachType"	"follow_origin"
+			
+				"States"
+				{
+					"MODIFIER_STATE_INVULNERABLE"					"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_HEALTH_BAR"					"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_UNIT_COLLISION"				"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NOT_ON_MINIMAP"					"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_UNSELECTABLE"					"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_COMMAND_RESTRICTED"				"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+			
+			"modifier_static_remnant_dummy_freeze_datadriven"
+			{
+				"States"
+				{
+					"MODIFIER_STATE_FROZEN"							"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	}
+
+"edgewalker_neutrino"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"FightRecapLevel"				"1"
+		"AbilityTextureName"			"spectre_spectral_dagger"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"2525"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+	
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"1.75"
+                "SpellInitialCharges"                           "10"
+	
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"55 45 35 25"
+	
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.0"	
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"magic_amp_base"				"12 13 14 15"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"magic_amp_stacking"		"2 3 4 5"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"magic_amp_duration"	"3"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dagger_radius"			"125 150 175 200"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"speed"					"900 1500 2100 2700"
+			}
+                        "06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_charges"				"30"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"charge_restore_time"				"30.0"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"soul_radius"			"1400"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"soul_additional_charges"	"5 7 9 11"
+			}
+		}
+	}
+	
+"edgewalker_gravity_well"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"	
+	
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1200"
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"900"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"0.4 0.4 0.4 0.4"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"45 60 75 90"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius_tree"				"275"
+			}
+		}
+	
+		"OnSpellStart"
+		{
+			"FireEffect"
+			{
+				"EffectName"        "particles/units/heroes/hero_dark_seer/dark_seer_vacuum.vpcf"
+				"EffectAttachType"  "start_at_customorigin"
+				"TargetPoint"       "POINT"
+	
+				"ControlPoints"
+				{
+					"01"	"%radius 0 0"
+				}
+			}
+	
+			"CreateThinker"
+			{
+				"ModifierName"	"modifier_vacuum_thinker_datadriven"
+				"Target" 		"POINT"
+			}
+		}
+	
+		"Modifiers"
+		{
+			"modifier_vacuum_thinker_datadriven"
+			{
+				"Duration"		"%duration"
+	
+				"OnCreated"
+				{
+					"FireSound"
+					{
+						"EffectName"	"Hero_Dark_Seer.Vacuum"
+						"Target" 		"TARGET"
+					}
+	
+					"DestroyTrees"
+					{
+						"Target" 		"TARGET"
+						"Radius"		"%radius_tree"
+					}
+	
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_dark_seer/vacuum.lua"
+						"Function"		"VacuumStart"
+					}
+				}
+	
+				"OnDestroy"
+				{
+					"ActOnTargets"
+					{
+						"Target"
+						{
+							"Center"  	"TARGET"
+							"Radius" 	"%radius"
+							"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+							"Flags"     "DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
+						}
+					
+						"Action"    
+						{
+							"Damage"
+							{
+								"Target"		"TARGET"
+								"Type"			"DAMAGE_TYPE_MAGICAL"
+								"Damage"		"%damage"
+							}
+						}
+					}
+				}
+	
+				"ThinkInterval"  "0.03"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_dark_seer/vacuum.lua"
+						"Function"		"Vacuum"
+						"vacuum_modifier"	"modifier_vacuum_datadriven"
+					}
+				}
+			}
+	
+			"modifier_vacuum_datadriven"
+			{
+				"IsPurgable"	"0"
+	
+				"OverrideAnimation"     "ACT_DOTA_FLAIL"
+	
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED"			"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_UNIT_COLLISION"	"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	}			
+			
+	"edgewalker_shift"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1050"
+		"AbilityCastPoint"				"0.65 0.45 0.25"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"90.0 75.0 60.0"
+		"AbilityDuration"				"7.0"
+	
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"175 200 225"
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"edgewalker_shift_wardhp"	"1"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"edgewalker_shift_ethereal_radius"	"375"
+			}
+
+		{
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_spell_damage_pct_allies"	"-25"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_spell_damage_pct"	"-40"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_movement_speed"		"-40"
+			}
+
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"edgewalker_shift_ward_speed"	"400"
+			}
+	
+		
+			}
+		}
+	}
+"Modifiers"
+		{
+			"modifier_decrepify_ally"
+			{
+				"IsDebuff"			"1"
+		
+				"EffectName"		"particles/units/heroes/hero_pugna/pugna_decrepify.vpcf"
+				"EffectAttachType"	"follow_origin"
+		
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_DECREPIFY_UNIQUE" "%bonus_spell_damage_pct_allies"
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%bonus_movement_speed" 
+				}
+	
+				"States"
+				{
+					"MODIFIER_STATE_DISARMED"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_ATTACK_IMMUNE"	"MODIFIER_STATE_VALUE_ENABLED"
+				}			
+			}
+	
+			"modifier_decrepify_enemy"
+			{
+				"IsDebuff"			"1"
+		
+				"EffectName"		"particles/units/heroes/hero_pugna/pugna_decrepify.vpcf"
+				"EffectAttachType"	"follow_origin"
+		
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_DECREPIFY_UNIQUE" "%bonus_spell_damage_pct"
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%bonus_movement_speed" 
+				}
+	
+				"States"
+				{
+					"MODIFIER_STATE_DISARMED"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_ATTACK_IMMUNE"	"MODIFIER_STATE_VALUE_ENABLED"
+				}		
+"modifier_shift_ward_self_debuff_datadriven"
+			{
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"Duration"			"9"
+				
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"heroes/hero_edgewalker/shift_death.lua"
+						"Function"			"caustic_finale_dead_effect"
+					}
+				}
+				
+				"OnDeath"
+				{
+					"Damage"
+					{
+						"Type"				"DAMAGE_TYPE_MAGICAL"
+						"Damage"			"%shift_death_damage"
+                                                "Stun"                          "%shift_death_stun"
+ 						"Target"
+						{
+							"Center"		"UNIT"
+							"Radius"		"%shift_death_radius"
+							"Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+						}	
+					}
+				}	
