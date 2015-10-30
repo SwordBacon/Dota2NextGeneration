@@ -20,18 +20,21 @@ function BloodRakeSelfDamage( event )
 
 end
 
-function CasterStartLoc (keys)
-	local caster = keys.caster
-	CasterStartLocation = caster:GetAbsOrigin()
 
-function TeleportInFront (keys)
+
+function CasterStartLoc(keys)
 	local caster = keys.caster
 	local ability = keys.ability
-	local target = keys.target
-	CasterLocation = caster:GetAbsOrigin()
+	local duration = ability:GetLevelSpecialValueFor("buff_duration", ability:GetLevel() - 1 ) + 0.5
+	CasterStartLocation = caster:GetAbsOrigin()
 	CasterDirection = caster:GetForwardVector()
+	dummylocation = CasterStartLocation + (CasterDirection)
+	ability:ApplyDataDrivenThinker(caster, caster:GetAbsOrigin(), "MarkLocation", {duration = duration})
+end
 
+function TeleportInFront (keys)
+	local target = keys.target
 
-	FindClearSpaceForUnit(target, CasterLocation + CasterDirection * 100, false)
+	FindClearSpaceForUnit(target, dummylocation, false)
 end
 
