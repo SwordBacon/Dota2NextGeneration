@@ -36,7 +36,7 @@
 
 		// Armor
 		//-------------------------------------------------------------------------------------------------------------
-		"ArmorPhysical"				"4"								
+		"ArmorPhysical"				"4.45"								
 
 		// Attack
 		//-------------------------------------------------------------------------------------------------------------
@@ -50,12 +50,12 @@
 		// Attributes
 		//-------------------------------------------------------------------------------------------------------------
 		"AttributePrimary"				"DOTA_ATTRIBUTE_INTELLECT"
-		"AttributeBaseStrength"			"14"									
-		"AttributeStrengthGain"			"2.25"									
-		"AttributeBaseAgility"			"36"									
-		"AttributeAgilityGain"			"1.35"									
-		"AttributeBaseIntelligence"		"18"									
-		"AttributeIntelligenceGain"		"3.45"									
+		"AttributeBaseStrength"			"12"									
+		"AttributeStrengthGain"			"1.55"									
+		"AttributeBaseAgility"			"30"									
+		"AttributeAgilityGain"			"2.05"									
+		"AttributeBaseIntelligence"		"22"									
+		"AttributeIntelligenceGain"		"3.65"									
 		// Movement
 		//-------------------------------------------------------------------------------------------------------------
 		"MovementSpeed"				"325"									
