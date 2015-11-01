@@ -1,0 +1,154 @@
+// Dota Heroes File
+"DOTAAbilities"
+{	
+	"edgewalker_cascade_event"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"batrider_flamebreak"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+
+		"AbilityCooldown"				"18.0 14.0 10.0 6.0"
+		"AbilityManaCost"				"150 125 100 75"
+
+		"AbilityCastRange"				"475"
+		"AbilityCastPoint"				"0.5 0.4 0.3 0.01"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"projectile_distance"	"475"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"projectile_speed"		"1000"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"portal_radius"			"100"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"portal_duration"		"20"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_edgewalker/edgewalker_cascade_event.lua"
+				"Function"		"edgewalkerCascadeEvent_OnSpellStart"
+			}
+		}
+		"OnProjectileFinish"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_edgewalker/edgewalker_cascade_event.lua"
+				"Function"		"edgewalkerCascadeEvent_OnProjectileFinish"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_cascade_event_portal_tooltip"
+			{
+				"Duration"			"%portal_duration"
+				"IsHidden"			"0"
+				"IsPurgable"		"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"TextureName"		"wisp_relocate"
+			}
+		}
+	}
+	"edgewalker_neutrino_strike"
+	{
+		"ScriptFile"					"heroes/hero_edgewalker/edgewalker_neutrino_strike.lua"
+		"BaseClass"             		"ability_lua"
+		"AbilityTextureName"			"spectre_spectral_dagger"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+
+		"AbilityCooldown"				"1.25"
+		"AbilityManaCost"				"25 35 45 55"
+
+		"AbilityCastRange"				"1250"
+		"AbilityCastPoint"				"0.3"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"base_charges"					"10"
+			}			
+			"02"			
+			{			
+				"var_type"						"FIELD_FLOAT"
+				"base_magic_amp"				"15 15 15 15"
+			}			
+			"03"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"charges_gained_per_minute"		"1 3 5 7"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"charges_gained_per_hero_kill"	"6 7 8 9"
+			}
+			"05"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"stacking_magic_amp"			"5 5 5 5"
+			}
+			"06"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"max_magic_amp"					"50"
+			}
+			"07"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"break_duration"				"3"
+			}
+			"08"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"aoe_radius"					"200"
+			}
+			"09"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"projectile_width"				"50"
+			}
+			"10"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"projectile_speed"				"625 1250 1875 2500"
+			}
+			"11"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"charges_think_interval"		"60 20 12 8.57"
+			}
+			"12"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"projectile_distance"			"1250"
+			}
+			"13"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"onherokill_dist"				"2000"
+			}
+		}		
+	}
+}
+
