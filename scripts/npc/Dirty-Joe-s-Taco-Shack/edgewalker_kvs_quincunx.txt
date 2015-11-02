@@ -1,0 +1,183 @@
+"DOTAAbilities"
+{	
+	//================================================================================================
+	// DotaConcept Link: http://dotaconcept.com/hero/1094
+	// Hero: Aldebaran, The Edgewalker
+	// Ability: Cascade Event
+	// Status/Todo: Sounds & Particles
+	//================================================================================================
+	"edgewalker_cascade_event"
+	{
+		"ScriptFile"					"heroes/hero_edgewalker/edgewalker_cascade_event.lua"
+		"BaseClass"             		"ability_lua"
+		"AbilityTextureName"			"batrider_flamebreak"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+
+		"AbilityCooldown"				"18.0 14.0 10.0 6.0"
+		"AbilityManaCost"				"150 125 100 75"
+
+		"AbilityCastRange"				"475"
+		"AbilityCastPoint"				"0.5 0.4 0.3 0.01"
+
+		//"VectorTarget"				"1"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"projectile_distance"	"475"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"projectile_speed"		"1000"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"portal_radius"			"100"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"portal_duration"		"20"
+			}
+		}
+	}
+	//================================================================================================
+	// Ability: Neutrino Strike
+	// Status/Todo: 
+	// 1. Sounds & Particles
+	// 2. Raidating AOE Damage 
+	//================================================================================================
+	"edgewalker_neutrino_strike"
+	{
+		"ScriptFile"					"heroes/hero_edgewalker/edgewalker_neutrino_strike.lua"
+		"BaseClass"             		"ability_lua"
+		"AbilityTextureName"			"spectre_spectral_dagger"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+
+		"AbilityCooldown"				"1.75"
+		"AbilityManaCost"				"25 35 45 55"
+
+		"AbilityCastRange"				"300 600 900 1200"
+		"AbilityCastPoint"				"0.3"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"base_charges"					"10"
+			}			
+			"02"			
+			{			
+				"var_type"						"FIELD_FLOAT"
+				"base_magic_amp"				"12 14 16 18"
+			}			
+			"03"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"charges_gained_per_minute"		"1 3 5 7"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"charges_gained_per_hero_kill"	"6 7 8 9"
+			}
+			"05"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"stacking_magic_amp"			"1 2 3 4"
+			}
+			"06"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"max_magic_amp"					"50"
+			}
+			"07"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"break_duration"				"3"
+			}
+			"08"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"aoe_radius"					"200"
+			}
+			"09"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"projectile_width"				"50"
+			}
+			"10"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"projectile_speed"				"925 1250 1575 2000"
+			}
+			"11"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"charges_think_interval"		"60 20 12 8.57"
+			}
+			"12"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"projectile_distance"			"300 600 900 1200"
+			}
+			"13"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"onherokill_dist"				"525"
+			}
+		}	
+	}
+	//================================================================================================
+	// Ability: Gravity Well
+	// Status/Todo: 
+	// 1. Portal OnDestroy Trigger
+	// 2. Partices / Sounds
+	//================================================================================================	
+	"edgewalker_gravity_well"
+	{
+		"ScriptFile"					"heroes/hero_edgewalker/edgewalker_gravity_well.lua"
+		"BaseClass"             		"ability_lua"
+		"AbilityTextureName"			"dark_seer_vacuum"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"pull_distance"		"45 60 75 90"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"damage"			"45 60 75 90"
+			}
+		}
+	}	
+	//================================================================================================
+	// Ability: Reality Shift
+	// Status/Todo: 
+	// 
+	//================================================================================================
+	"edgewalker_reality_shift"
+	{
+		"ScriptFile"					"heroes/hero_edgewalker/edgewalker_reality_shift.lua"
+		"BaseClass"             		"ability_lua"
+		"AbilityTextureName"			""
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	}
+
+}

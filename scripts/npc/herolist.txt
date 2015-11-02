@@ -1,0 +1,6 @@
+"CustomHeroList"
+{
+	"npc_dota_hero_spectre"				"1"
+	"npc_dota_hero_ancient_apparition"	"1"
+	"npc_dota_hero_crystal_maiden"		"1"
+}
