@@ -19,7 +19,7 @@
 	{
 		"ID"			"1003"
 		"BaseClass"		"item_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT"
 		"AbilityCastRange"				"20000"
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"25.0"
