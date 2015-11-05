@@ -1,4 +1,117 @@
 "DOTAAbilities"
 {
-	
+	"item_Recipe_Pewter_Spyglass"
+	{
+		"ID"				"1002"
+		"BaseClass"			"item_datadriven"
+
+		"ItemCost"			"640"
+
+		"ItemResult"					"item_Pewter_Spyglass"
+		"ItemRequirements"
+		{
+			"01"						"item_wraith_band; item_quarterstaff; item_broadsword"
+		}
+	}
+
+	"item_Pewter_Spyglass"
+
+	{
+		"ID"			"1003"
+		"BaseClass"		"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityCastRange"				"20000"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"25.0"
+		"AbilityDuration"				"5"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_attack_speed" "10"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_range"		"100"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_attack_damage"	"31"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_intellect"		"3"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_agility"			"6"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_strength"		"3"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"800"
+			}
+			"08"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"activeduration"	"5"
+			}
+
+		}
+		"OnEquip"
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"Modifier_Pewter_Spyglass"
+			}	
+		}
+		"Modifiers"
+		{
+			"Modifier_Pewter_Spyglass"
+			{
+				"IsHidden" "1"
+
+				"Attributes" 					"MODIFIER_ATTRIBUTE_MULTIPLE"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%bonus_attack_speed"
+			    	"MODIFIER_PROPERTY_ATTACK_RANGE_BONUS" "%bonus_range"
+			    	"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "%bonus_attack_damage" 
+			    	"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"				"%bonus_intellect"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"					"%bonus_agility"
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"				"%bonus_strength"
+				}
+			}
+			"Modifier_Pewter_Spyglass_Vision"
+			{
+				"IsHidden"	"0"
+				"Properties"
+
+				"MODIFIER_PROPERTY_FIXED_DAY_VISION" "%radius"
+				"MODIFIER_PROPERTY_FIXED_NIGHT_VISION" "%radius"
+
+			}
+		}
+		"OnSpellStart"
+		{
+			"CreateThinker"
+			{
+				"ModifierName"	"Modifier_Pewter_Spyglass_Vision"
+				"Target" 		"CASTER"
+				"Duration"		"%duration"
+			}
+		}
+	}
 }
