@@ -1959,7 +1959,7 @@
 						{
 							"RunScript"
 							{
-								"ScriptFile"	"RipandTear"
+								"ScriptFile"	"UnholyEcstasy.lua"
 								"Function"		"FirstStrike"
 							}
 						}
@@ -1983,7 +1983,7 @@
 								{
 									"RunScript"
 									{
-										"ScriptFile"	"RipandTear"
+										"ScriptFile"	"UnholyEcstasy.lua"
 										"Function"		"SecondStrike"
 									}
 								}
