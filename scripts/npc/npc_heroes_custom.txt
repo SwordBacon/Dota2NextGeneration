@@ -16,4 +16,52 @@
 		"AbilityLayout"				"4"
 		"VisionNighttimeRange"		"1800"										// Range of vision at night time.
 	}
+	
+	//=================================================================================================================
+	// HERO: Bellatrix
+	//=================================================================================================================
+	"npc_dota_hero_Bellatrix"
+	{
+		"override_hero"				"npc_dota_hero_bloodseeker"
+		"InternalName"				"Bellatrix"
+		"AbilityLayout" 			"4"
+		"Ability1"					"Blood Rake"
+		"Ability2"					"Unholy Ecstasy"
+		"Ability3"					"Rip and Tear"
+		"Ability4"					"Live Transfusion"
+		"Ability5"					""
+		"Ability6"					""
+		"Ability7"					"attribute_bonus"	
+
+		// Armor
+		//-------------------------------------------------------------------------------------------------------------
+		"ArmorPhysical"				"1.5"									// Physical protection.
+		"MagicalResistance"			"25"									// Magical protection (percentage).
+
+		// Attack
+		//-------------------------------------------------------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"25"										// Damage range min.
+		"AttackDamageMax"			"35"										// Damage range max.
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"				// Type of damage dealt. 
+		"AttackRate"				"1.7"									// Speed of attack.
+		"AttackAnimationPoint"		"0.35"									// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"800"									// Range within a target can be acquired.
+		"AttackRange"				"128"									// Range within a target can be attacked.
+		"ProjectileModel"			"melee_hero"							// Particle system model for projectile.
+		"ProjectileSpeed"			"900"									// Speed of projectile.
+
+		// Attributes
+		//-------------------------------------------------------------------------------------------------------------
+		"AttributePrimary"			"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"20"										// Base strength
+		"AttributeStrengthGain"		"2"										// Strength bonus per level.
+		"AttributeBaseIntelligence"	"26"										// Base intelligence
+		"AttributeIntelligenceGain"	"2.7"										// Intelligence bonus per level.
+		"AttributeBaseAgility"		"20"										// Base agility
+		"AttributeAgilityGain"		"2"										// Agility bonus per level.	
+		"MovementSpeed"				"295"									// Speed.
+		"StatusHealthRegen"			"1.5"									// Health regeneration rate.
+		"StatusHealth"				"150"
+	}
 }
