@@ -1,3 +1,7 @@
+
+_G.DEBUG_DRAW = true
+
+
 if CAddonTemplateGameMode == nil then
 	CAddonTemplateGameMode = class({})
 end
@@ -5,6 +9,9 @@ end
 require("util")
 require("libraries.timers")
 require("libraries.vector_target")
+require('libraries.projectiles')
+require("lua_modifiers")
+
 --------------------------------------------------------------------------------------------------------
 function Precache( context )
 	--[[
@@ -15,7 +22,16 @@ function Precache( context )
 			PrecacheResource( "particle_folder", "particles/folder", context )
 	]]
 	VectorTarget:Precache( context )
+
+	-- edgewalker particles
 	PrecacheResource( "particle_folder", "particles/heroes/hero_edgewalker", context )
+	PrecacheUnitByNameSync("npc_edgewalker_portal",  context)
+	PrecacheUnitByNameSync("npc_reality_shift_ward",  context)
+	
+	-- placeholders
+	PrecacheResource( "particle_folder", "particles/items_fx", context )
+	PrecacheResource( "particle_folder", "particles/status_fx", context )
+	PrecacheResource( "particle_folder", "particles/units/heroes/hero_bane", context )
 end
 --------------------------------------------------------------------------------------------------------
 -- Create the game mode when we activate
