@@ -1,7 +1,5 @@
 if edgewalker_cascade_event == nil then edgewalker_cascade_event = class({}) end
 --------------------------------------------------------------------------------------------------------
-LinkLuaModifier("modifier_cascade_event_portal_tooltip", "heroes/hero_edgewalker/modifier_cascade_event_portal_tooltip", LUA_MODIFIER_MOTION_NONE)
---------------------------------------------------------------------------------------------------------
 function edgewalker_cascade_event:GetCastAnimation() return ACT_DOTA_CAST_ABILITY_1 end
 --------------------------------------------------------------------------------------------------------
 function edgewalker_cascade_event:OnSpellStart()
@@ -24,6 +22,7 @@ function edgewalker_cascade_event:OnSpellStart()
 	self.fPortalDuration = self:GetSpecialValueFor("portal_duration")
 	self.fPortalRadius = self:GetSpecialValueFor("portal_radius")
 
+	-- cursor pos priority
 	if self.fProjectileDistance > (self:GetCursorPosition() - hCaster:GetOrigin()):Length2D() then
 		self.fProjectileDistance = (self:GetCursorPosition() - hCaster:GetOrigin()):Length2D()
 	end
@@ -46,44 +45,22 @@ end
 --------------------------------------------------------------------------------------------------------
 function edgewalker_cascade_event:OnProjectileThink(vLocation)
 	DebugDrawSphere(vLocation, Vector(255,0,0), 255, 10, false, 1/30)
+
+	-- vision
+	AddFOWViewer(self:GetCaster():GetTeamNumber(), vLocation, self.fPortalRadius, 1/30, false)
 end
 --------------------------------------------------------------------------------------------------------
 function edgewalker_cascade_event:OnProjectileHit(hTarget, vLocation)
 	-- target is nil on OnProjectileFinish event
-	if 	hTarget == nil then
-		local hCaster = self:GetCaster()
-
-		-- determine vLocation from projectile velocity
-		local vDirection = ProjectileManager:GetLinearProjectileVelocity(self.nProjectileIndex) / self.fProjectileSpeed
-		local vLocation = self.vSpawnPoint + vDirection * self.fProjectileDistance
-	
-		-- for debugging  
-		DebugDrawCircle(vLocation, Vector(255,0,0), 1, self.fPortalRadius, false, self.fPortalDuration)
-	
-		-- particle placeholder
-		local nParticleIndex = ParticleManager:CreateParticle("particles/heroes/hero_edgewalker/edgewalker_cascade_event_portal.vpcf", PATTACH_CUSTOMORIGIN, hCaster)
-		ParticleManager:SetParticleControl(nParticleIndex, 0, vLocation)
-		Timers:CreateTimer(self.fPortalDuration, function() 
-			ParticleManager:DestroyParticle(nParticleIndex, false)
-			ParticleManager:ReleaseParticleIndex(nParticleIndex)
-		end)
-	
-		-- modifier tooltip
-		local fTooltipDuration = self:GetSpecialValueFor("portal_duration")
-		hCaster:AddNewModifier(hCaster, self, "modifier_cascade_event_portal_tooltip", {duration = fTooltipDuration})
-	
-		-- portal table to store portal locations
-		hCaster.tPortalHistory = hCaster.tPortalHistory or {}
-		local t = hCaster.tPortalHistory
-		local fNow = GameRules:GetGameTime()
-		t[fNow] = vLocation
-	
-		-- delete portal location kv after portal duration
-		for k in pairs(t) do
-			if tonumber(k) <= GameRules:GetGameTime() - self.fPortalDuration then
-				t[k] = nil
-			end
-		end
+	if hTarget == nil then
+		self:OnProjectileFinish(vLocation)
 	end
-	return false
+end
+--------------------------------------------------------------------------------------------------------
+function edgewalker_cascade_event:OnProjectileFinish(vLocation)
+	-- vars
+	local hCaster = self:GetCaster()
+	local vLocGround =  GetGroundPosition(vLocation, hCaster)
+	-- modifier that creates portal
+	CreateModifierThinker(hCaster, self, "modifier_cascade_event_portal", { duration = self.fPortalDuration }, vLocGround, hCaster:GetTeamNumber(), false)
 end
