@@ -12,6 +12,8 @@
 		"Ability1"					"edgewalker_cascade_event"				// Ability 1
 		"Ability2"					"edgewalker_neutrino_strike"
 		"Ability3"					"edgewalker_gravity_well"
+		"Ability4"					"edgewalker_reality_shift"
+		"Ability5"					"attribute_bonus"
 
 		"AbilityLayout"				"4"
 		"VisionNighttimeRange"		"1800"										// Range of vision at night time.
