@@ -7,9 +7,7 @@ if CAddonTemplateGameMode == nil then
 end
 --------------------------------------------------------------------------------------------------------
 require("util")
-require("libraries.timers")
 require("libraries.vector_target")
-require('libraries.projectiles')
 require("lua_modifiers")
 
 --------------------------------------------------------------------------------------------------------
