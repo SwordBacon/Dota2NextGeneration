@@ -3,11 +3,16 @@
 // the specified key-value combinations.  Use override_hero <hero_to_override> for this.
 "DOTAHeroes"
 {
+	//=================================================================================================================
+	// HERO: The Alpha Stryder
+	//=================================================================================================================
+	"hero_alpha_strider"
+	{
 		"override_hero"				"npc_dota_hero_disruptor"
 		"AbilityLayout"				"5"
 		"Ability1"				"alpha_strider_static_charge"			// Ability 1
-		"Ability2"				"alpha_strider_plasma_leap"			// Ability 2
-		"Ability3"				"alpha_strider_talon_spark"			// Ability 3
+		"Ability2"				"alpha_strider_plasma_leap"				// Ability 2
+		"Ability3"				"alpha_strider_talon_spark"				// Ability 3
 		"Ability4"				"alpha_strider_alternating_current"		// Innate
 		"Ability5"				"attribute_bonus"				
 		"Ability6"				"alpha_strider_short_circuit"			// Ultimate
@@ -26,12 +31,32 @@
 		"MovementSpeed" 		"325"
 		"AttackDamageMin"		"14"						
 		"AttackDamageMax"		"18"	
-	}{
+	}
 	//=================================================================================================================
-	// HERO: The Alpha Stryder
+	// HERO: Bellatrix Venai, the Blood Cultist
 	//=================================================================================================================
-	"hero_alpha_strider"
-	
+	"hero_bellatrix"
+	{
+		"override_hero"				"npc_dota_hero_bloodseeker"
+		"InternalName"				"Bellatrix"
+		"Ability1"				"bellatrix_bloodrake"				// Ability 1
+		"Ability2"				"bellatrix_rip_and_tear"			// Ability 2
+		"Ability3"				"bellatrix_unholy_ecstasy"			// Ability 3
+		"Ability4"				"bellatrix_live_transfusion"		// Ultimate
+
+		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"			// Primary Attribute
+		"AttributeBaseStrength"		"20"						// Base strength
+		"AttributeStrengthGain"		"2.0"						// Strength bonus per level.
+		"AttributeBaseIntelligence"	"26"						// Base intelligence
+		"AttributeIntelligenceGain"	"2.7"						// Intelligence bonus per level.
+		"AttributeBaseAgility"		"20"						// Base agility
+		"AttributeAgilityGain"		"2.0"						// Agility bonus per level.
+		"ArmorPhysical"			"1"	
+		"AttackRate" 			"1.7"
+		"MovementSpeed" 		"310"
+		"AttackDamageMin"			"25"
+		"AttackDamageMax"			"35"	
+	}
 	//=================================================================================================================
 	// HERO: Cherub, the Dancing Flower
 	//=================================================================================================================
@@ -39,7 +64,7 @@
 	{
 		"override_hero"				"npc_dota_hero_enchantress"
 		"Ability1"				"cherub_sleep_cloud"			// Ability 1
-		"Ability2"				"cherub_synthesis"			// Ability 2
+		"Ability2"				"cherub_synthesis"				// Ability 2
 		"Ability3"				"cherub_explosive_spore"		// Ability 3
 		"Ability4"				"cherub_flower_garden"			// Ultimate
 
@@ -63,6 +88,13 @@
 	"hero_edgewalker"
 	{
 		"override_hero"				"npc_dota_hero_spectre"
+		"AbilityLayout"				"4"
+		"Ability1"					"edgewalker_cascade_event"				// Ability 1
+		"Ability2"					"edgewalker_neutrino_strike"			// Ability 2
+		"Ability3"					"edgewalker_gravity_well"				// Ability 3
+		"Ability4"					"edgewalker_reality_shift"				// Ultimate
+		"Ability5"					"attribute_bonus"
+		
 		"ArmorPhysical"				"4"							
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"			"23"								
@@ -80,11 +112,34 @@
 		"AttributeIntelligenceGain"		"3.45"								
 		"MovementSpeed"				"325"								
 		"MovementTurnRate"			"0.8"	
-		"Ability1"					"edgewalker_cascade"			// Ability 1
-		"Ablity2"                                        "edgewalker_neutrinos"                 // Ability 2    
-		"Ability3"					"edgewalker_gravity_well"		// Ability 3
-		"Ability4"					"edgewalker_shift"				// Ability 4
-		"Ability5"                                      "attribute_bonus"   //Ability 5  
+	}
+	//=================================================================================================================
+	// HERO: Karnage, the Keen Commander
+	//=================================================================================================================
+	"hero_keen_commander"
+	{
+		"override_hero"				"npc_dota_hero_gyrocopter"
+		"AbilityLayout"				"4"
+		"Ability1"				"keen_commander_recon_system"		// Ability 1
+		"Ability2"				"keen_commander_mortar_shot"		// Ability 2
+		"Ability3"				"keen_commander_slag_armor"			// Ability 3
+		"Ability4"				"attribute_bonus"				
+		"Ability5"				"keen_commander_siege_mode"			// Ultimate
+		
+	
+		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"			// Primary Attribute
+		"AttributeBaseStrength"		"21"						// Base strength
+		"AttributeStrengthGain"		"2.0"						// Strength bonus per level.
+		"AttributeBaseIntelligence"	"19"						// Base intelligence
+		"AttributeIntelligenceGain"	"2.0"						// Intelligence bonus per level.
+		"AttributeBaseAgility"		"12"						// Base agility
+		"AttributeAgilityGain"		"1.6"						// Agility bonus per level.
+		"ArmorPhysical"			"4"	
+		"AttackRate" 			"1.7"
+		"AttackRange"			"600"
+		"MovementSpeed" 		"310"
+		"AttackDamageMin"		"20"						
+		"AttackDamageMax"		"28"	
 	}
 	//=================================================================================================================
 	// HERO: Rasetsumaru, the Onimusha
@@ -92,44 +147,46 @@
 	"hero_onimusha"
 	{
 		"override_hero"                         "npc_dota_hero_juggernaut"
-		"InternalName"                          "Rasetsumaru"
-		"AbilityLayout"                         "6"
+		"InternalName"                          "Onimusha"
+		"AbilityLayout"                         "4"
 		"Ability1"                                      "onimusha_dash"
 		"Ability2"                                      "onimusha_guard"
 		"Ability3"                                      "onimusha_orochi"
-		"Ability4"                                      "W"
-		"Ability5"                                      "R"
-		"Ability6"                                      "onimusha_Battojutsu(E)"
-		"Ability7"                                      "attribute_bonus"      
+		"Ability4"                                      "onimusha_battojutsu_q"
+		"Ability5"                                      "onimusha_battojutsu_w"
+		"Ability6"                                      "onimusha_battojutsu"
+		"Ability7"                                      "attribute_bonus"
+		"Ability8"                                      "onimusha_battojutsu_e"      
+		"Ability9"                                      "onimusha_battojutsu_r"
 
 		// Armor
-		//-------------------------------------------------------------------------------------------------------------
-		"ArmorPhysical"                         "2.65"                                                                  // Physical protection.
+		//-----------------------------------------------------------------------------------------------------------
+		"ArmorPhysical"                         "2.65"                 // Physical protection.
 		"MagicalResistance"                             "25"                                                                    // Magical protection (percentage).
 
 		// Attack
-		//-------------------------------------------------------------------------------------------------------------
+		//-----------------------------------------------------------------------------------------------------------
 		"AttackCapabilities"            "DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"                       "28"                                                                            // Damage range min.
 		"AttackDamageMax"                       "33"                                                                            // Damage range max.
-		"AttackDamageType"                      "DAMAGE_TYPE_ArmorPhysical"                             // Type of damage dealt.
-		"AttackRate"                            "1.7"                                                                   // Speed of attack.
-		"AttackAnimationPoint"          "0.35"                                                                  // Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"        "800"                                                                   // Range within a target can be acquired.
-		"AttackRange"                           "128"                                                                   // Range within a target can be attacked.
-		"ProjectileModel"                       "melee_hero"                                                    // Particle system model for projectile.
-		"ProjectileSpeed"                       "900"                                                                   // Speed of projectile.
+		"AttackDamageType"                      "DAMAGE_TYPE_ArmorPhysical"             // Type of damage dealt.
+		"AttackRate"                            "1.7"                                   // Speed of attack.
+		"AttackAnimationPoint"          "0.35"                              // Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"        "800"                               // Range within a target can be acquired.
+		"AttackRange"                           "128"                       // Range within a target can be attacked.
+		"ProjectileModel"                       "melee_hero"                // Particle system model for projectile.
+		"ProjectileSpeed"                       "900"                       // Speed of projectile.
 
 		// Attributes
 		//-------------------------------------------------------------------------------------------------------------
 		"AttributePrimary"                      "DOTA_ATTRIBUTE_AGILITY"
-		"AttributeBaseStrength"         "18"                                                                            // Base strength
-		"AttributeStrengthGain"         "1.7"                                                                           // Strength bonus per level.
-		"AttributeBaseIntelligence"     "24"                                                                            // Base intelligence
-		"AttributeIntelligenceGain"     "2.3"                                                                           // Intelligence bonus per level.
-		"AttributeBaseAgility"          "23"                                                                            // Base agility
-		"AttributeAgilityGain"          "2"                                                                             // Agility bonus per level.    
-		"MovementSpeed"                         "305"                                                                   // Speed.
+		"AttributeBaseStrength"         "18"                           // Base strength
+		"AttributeStrengthGain"         "1.7"                          // Strength bonus per level.
+		"AttributeBaseIntelligence"     "24"                           // Base intelligence
+		"AttributeIntelligenceGain"     "2.3"                          // Intelligence bonus per level.
+		"AttributeBaseAgility"          "23"                           // Base agility
+		"AttributeAgilityGain"          "2"                            // Agility bonus per level.    
+		"MovementSpeed"                         "305"                  // Speed.
 		"StatusHealth"                          "103"
     }
 	//=================================================================================================================
@@ -167,7 +224,7 @@
 	"hero_suna"
 	{
 		"override_hero"				"npc_dota_hero_nyx_assassin"
-		"Ability1"				"suna_blight_and_wither"			// Ability 1
+		"Ability1"				"suna_blight_and_wither"	// Ability 1
 		"Ability2"				"suna_vicissitude"			// Ability 2
 		"Ability3"				"suna_puppeteer"			// Ability 3
 		"Ability4"				"attribute_bonus"
@@ -200,7 +257,7 @@
 	"hero_veera"
 	{
 		"override_hero"				"npc_dota_hero_bounty_hunter"
-		"Ability1"				"veera_toxic_darts"			// Ability 1
+		"Ability1"				"veera_toxic_darts"			    // Ability 1
 		"Ability2"				"veera_evasive_roll"			// Ability 2
 		"Ability3"				"veera_plains_runner"			// Ability 3
 		"Ability4"				"veera_thrill_of_the_hunt"		// Ultimate
@@ -224,10 +281,10 @@
 	"hero_viscous_ooze"
 	{
 		"override_hero"				"npc_dota_hero_venomancer"
-		"Ability1"				"viscous_ooze_slime_trail"		// Ability 1
+		"Ability1"				"viscous_ooze_slime_trail"		    // Ability 1
 		"Ability2"				"viscous_ooze_split_oozelings"		// Ability 2
 		"Ability3"				"viscous_ooze_sticky_membrane"		// Ability 3
-		"Ability4"				"viscous_ooze_consume_item"		// Ultimate 
+		"Ability4"				"viscous_ooze_consume_item"		    // Ultimate 
 		
 		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"			// Primary Attribute
 		"AttributeBaseStrength"		"40"						// Base strength
@@ -323,32 +380,3 @@
 		"AttackDamageMax"		"27"	
 	}
 }
-        //=================================================================================================================
-	// HERO: Karnage, the Keen Commander
-	//=================================================================================================================
-	"hero_keen_commander"
-{
-		"override_hero"				"npc_dota_hero_gyrocopter"
-		"AbilityLayout"				"4"
-		"Ability1"				"keen_commander_recon_system"			// Ability 1
-		"Ability2"				"keen_commander_mortar_shot"			// Ability 2
-		"Ability3"				"keen_commander_slag_armor"			// Ability 3
-		"Ability4"				"attribute_bonus"				
-		"Ability5"				"keen_commander_siege_mode"			// Ultimate
-		
-	
-		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"			// Primary Attribute
-		"AttributeBaseStrength"		"21"						// Base strength
-		"AttributeStrengthGain"		"2.0"						// Strength bonus per level.
-		"AttributeBaseIntelligence"	"19"						// Base intelligence
-		"AttributeIntelligenceGain"	"2.0"						// Intelligence bonus per level.
-		"AttributeBaseAgility"		"12"						// Base agility
-		"AttributeAgilityGain"		"1.6"						// Agility bonus per level.
-		"ArmorPhysical"			"4"	
-		"AttackRate" 			"1.7"
-		"AttackRange"			"600"
-		"MovementSpeed" 		"310"
-		"AttackDamageMin"		"20"						
-		"AttackDamageMax"		"28"	
-	}
-}	
