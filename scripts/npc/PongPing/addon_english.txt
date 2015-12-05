@@ -49,6 +49,92 @@
 
 		"DOTA_Tooltip_Modifier_Unholy_Ecstasy_Bonus_Damage" "Unholy Ecstasy bonus damage"
 		"DOTA_Tooltip_Modifier_Unholy_Ecstasy_Bonus_Damage_description" "Your next attack deals extra damage based on the damage that was dealt to you during Unholy Ecstasy"
+		"DOTA_Tooltip_Ability_Presence of the Fat Man" "Presence of the FATMAN"
+		"DOTA_Tooltip_Ability_Presence of the Fat Man_description" "Deals damage based on your curren health in an area around you. Layers stack!"
+		"DOTA_Tooltip_Ability_Presence of the Fat Man_AreaRadius" "Layer sizes:"
+		"DOTA_Tooltip_Ability_Presence of the Fat Man_DamageTick" "Damage percentage dealt:"
+
+		"DOTA_Tooltip_Presence_of_the_Fat_Man_buff1" "Presence of the FATMAN"
+		"DOTA_Tooltip_Presence_of_the_Fat_Man_buff1_description" "You are around a very fat person who is starving you to death. You are losing health based on his hp"
+		"DOTA_Tooltip_Presence_of_the_Fat_Man_buff2" "Presence of the FATMAN"
+		"DOTA_Tooltip_Presence_of_the_Fat_Man_buff2_description" "You are around a very fat person who is starving you to death. You are losing health based on his hp"
+		"DOTA_Tooltip_Presence_of_the_Fat_Man_buff3" "Presence of the FATMAN"
+		"DOTA_Tooltip_Presence_of_the_Fat_Man_buff3_description" "You are around a very fat person who is starving you to death. You are losing health based on his hp"
+
+		"DOTA_Tooltip_Extra_Strength" "Extra Strength"
+		"DOTA_Tooltip_Extra_Strength_description" "Extra Strength gained."
+
+		"DOTA_Tooltip_Minus_Strength" "Minus Strength"
+		"DOTA_Tooltip_Minus_Strength_description" "Strength stolen."
+
+
+		"DOTA_Tooltip_Ability_Run for your Life" "Run for your life!"
+		"DOTA_Tooltip_Ability_Run for your Life_description" "Whenever you take damage you'll lose weight making you faster for a short time"
+		"DOTA_Tooltip_Ability_Run for your Life_RunningBonus" "MS increment:"
+		"DOTA_Tooltip_Ability_Run for your Life_Buff_Duration" "Duration:"
+		"Dota_Tooltip_Speedboost" "Speedboost"
+		"Dota_Tooltip_Speedboost_description" "Someone attacked you, you've lost some weight making you faster for a short time!"
+
+		"DOTA_Tooltip_Ability_All you can eat" "All you can eat!"
+		"DOTA_Tooltip_Ability_All you can eat_description" "All you can eat is the kind of meal FATMAN likes, while dropping everyhing to eat he rapidly starts getting his health back. His meal lasts a maximum of 10 seconds"
+		"DOTA_Tooltip_Ability_All you can eat_Heal" "Heal percentage:"
+
+		"DOTA_Tooltip_Ability_Nap Time" "Nap Time"
+		"DOTA_Tooltip_Ability_Nap Time_description" "FATMAN falls asleep and starts rolling, bulldozing enemies on his path. Rolling is slower than walking"
+		"DOTA_Tooltip_Ability_Nap Time_bulldoze_duration" "Bulldoze duration:"
+		"DOTA_Tooltip_Ability_Nap Time_movement_speed_penalty" "Movement speed penalty:"
+
+		"Dota_Tooltip_Bulldozed" "Bulldozed"
+		"Dota_Tooltip_Bulldozed_description" "You've got rolled over. You can't move or turn."
+
+		"Dota_Tooltip_Ability_Positive_Charge" "Positive Charge"
+		"Dota_Tooltip_Ability_Positive_Charge_description" "Applies a magnetic charge to target unit. Units with the same charge can't get closer than half the pull range, while units with opposite charges get pulled towards each other. Deals damage and increases/decreases damage taken. Shares charges with Negative Charge"		
+		"Dota_Tooltip_Ability_Positive_Charge_damage_amp_ally" "Damage Amplification:"
+		"Dota_Tooltip_Ability_Positive_Charge_magnetic_aoe" "Pull Range:"
+		"Dota_Tooltip_Ability_Positive_Charge_duration" "Duration:"
+		"Dota_Tooltip_Ability_Positive_Charge_max_charges" "Maximum Charges:"
+		"Dota_Tooltip_Ability_Positive_Charge_charge_replenish_time" "Charge Replenish Time:"
+
+
+		"Dota_Tooltip_Ability_Negative_Charge" "Negative Charge"
+		"Dota_Tooltip_Ability_Negative_Charge_description" "Applies a magnetic charge to target unit. Units with the same charge can't get close, while units with opposite charges get pulled towards each other. Deals damage and increases/decreases damage taken. Shares charges with Positive Charge"
+		"Dota_Tooltip_Ability_Negative_Charge_damage_amp_ally" "Damage Amplification:"
+		"Dota_Tooltip_Ability_Negative_Charge_magnetic_aoe" "Pull Range:"
+		"Dota_Tooltip_Ability_Negative_Charge_duration" "Duration:"
+		"Dota_Tooltip_Ability_Negative_Charge_max_charges" "Maximum Charges:"
+		"Dota_Tooltip_Ability_Negative_Charge_charge_replenish_time" "Charge Replenish Time:"
+
+		"Dota_Tooltip_Positive_Charge_Ally" "Positive Charge"
+		"Dota_Tooltip_Positive_Charge_Ally_description" "You take less magical damage"
+		"Dota_Tooltip_Positive_Charge_Enemy" "Positive Charge"
+		"Dota_Tooltip_Positive_Charge_Enemy_description" "You take more magical damage"
+
+		"Dota_Tooltip_Negative_Charge_Ally" "Negative Charge"
+		"Dota_Tooltip_Negative_Charge_Ally_description" "You take less magical damage"
+		"Dota_Tooltip_Negative_Charge_Enemy" "Negative Charge"
+		"Dota_Tooltip_Negative_Charge_Enemy_description" "You take more magical damage"
+
+		"Dota_Tooltip_Ability_Power_Surge" "Power Surge"
+		"Dota_Tooltip_Ability_Power_Surge_description" "Slows the target and if the target has a magnetic charge it also deals damage to them and the unit becomes a more powerfull magnet immune to other magnets."
+		"Dota_Tootip_Ability_Power_Surge_magnetic_field" "Super Magnetic Field:"
+		"Dota_Tootip_Ability_Power_Surge_Negative_Damage" "Damage if target has negative charge:"
+		"Dota_Tootip_Ability_Power_Surge_Positive_Damage" "Damage if target has positive charge:"
+
+		"Dota_Tooltip_Power_Surge_Slow" "Power Surge Slow"
+		"Dota_Tooltip_Power_Surge_Slow_description" "You are being slowed"
+
+		"Dota_Tooltip_Ability_Metal_Rod" "Metal Rod"
+		"Dota_Tooltip_Ability_Metal_Rod_description" "Borus drops down a magnet pulling every unit with a charge towards it and leashing it for a duration. Silences on positive charge, disarms on a negative charge"
+		"Dota_Tooltip_Ability_Metal_Rod_Positive_Damage" "Damage:"
+		"Dota_Tooltip_Ability_Metal_Rod_Silence_duration" "Duration:"
+		"Dota_Tooltip_Ability_Metal_Rod_leash_duration" "Leash Duration:"
+
+		"Dota_Tooltip_electric_charge_stack_counter" "Electric Charge Counter"
+		"Dota_Tooltip_rod_disarm" "Disarmed"
+		"Dota_Tooltip_rod_silence" "Silenced"
+
+		"Dota_Tooltip_Ability_Greater_Magnet" "Greater Magnet"
+		"Dota_Tooltip_Ability_Greater_Magnet_description" "Borus gets a random magnetic field around him, applying it to everyone around his field. Units with opposite charges get sucked in, and heroes can't get out. Can switch charges"
 
 
 
