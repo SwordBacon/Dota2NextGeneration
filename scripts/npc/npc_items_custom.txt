@@ -115,3 +115,143 @@
 		}
 	}
 }
+
+"item_spellcatchers_wand_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"item_datadriven"
+	"ID"							"9001"  //Valve's version of this item uses the ID "36".
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"Model"							"models/props_gameplay/magic_wand.mdl"
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_magic_stick"
+	
+	// Stats		
+	//-------------------------------------------------------------------------------------------------------------
+	
+	"AbilityCastRange"				"400"
+	"AbilityCastPoint"				"0.0"
+	"AbilityCooldown"				"20.0"
+	"AbilityManaCost"				"50"
+	
+	// Item Info
+	//-------------------------------------------------------------------------------------------------------------
+	"ItemCost"						"500"
+	"ItemShopTags"					"damage;int"
+	"ItemQuality"					"rare"
+	"ItemAliases"					"spellcatchers wand"
+	"ItemRequiresCharges"			"1"
+	"ItemDisplayCharges"			"1"
+	"ItemPermanent"					"1"
+	"ItemInitialCharges"			"0"
+
+
+	// Special	
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"max_charges"			"20"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"charge_radius"			"1200"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_intellect"		"8"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"mana_burn_per_charge"	"15"
+		}
+	}
+	
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"			"items/item_spellcatchers_wand.lua"
+			"Function"				"item_spellcatchers_wand_datadriven_on_spell_start"
+			"ManaBurnPerCharge"		"%mana_burn_per_charge"
+		}
+	}
+	
+	"Modifiers"
+	{
+		"modifier_item_spellcatchers_wand_datadriven"
+		{
+			"Passive"			"1"
+			"IsHidden"			"1"
+			"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			
+			"Properties"
+			{
+			
+				"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_intellect"
+			}
+		}
+		"modifier_item_magic_wand_datadriven_aura_emitter"
+		{
+			"Passive"				"1"
+			"IsHidden"				"1"
+			
+			"Aura" 					"modifier_item_spellcatchers_wand_datadriven_aura"
+			"Aura_Radius" 			"%charge_radius"
+			"Aura_Teams" 			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"Aura_Types" 			"DOTA_UNIT_TARGET_HERO"
+			"Aura_Flags" 			"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+			"Aura_ApplyToCaster" 	"0"
+		}
+		"modifier_item_spellcatchers_wand_datadriven_aura"
+		{
+			"Passive"			"0"
+			"IsHidden"			"1"
+			"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			
+			"OnAbilityExecuted"
+			{
+				"RunScript"
+				{
+					"ScriptFile"			"items/item_spellcatchers_wand.lua"
+					"Function"				"modifier_item_spellcatchers_wand_datadriven_aura_on_ability_executed"
+					"MaxCharges"			"%max_charges"
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+"item_recipe_spellcatchers_wand_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"item_datadriven"
+	"ID"							"1035"  //Valve's version of this item uses the ID "35".
+	"Model"							"models/props_gameplay/recipe.mdl"
+	"AbilityTextureName"			"item_recipe"
+	
+	// Item Info
+	//-------------------------------------------------------------------------------------------------------------
+	"ItemCost"						"150"	
+	"ItemShopTags"					""
+	
+	// Recipe
+	//-------------------------------------------------------------------------------------------------------------
+	"ItemRecipe"					"1"
+	"ItemResult"					"item_spellcatchers_wand_datadriven"
+	"ItemRequirements"
+	{
+		"01"						"item_magic_stick_datadriven;item_mantle_datadriven;item_mantle_datadriven"
+	}
+}
